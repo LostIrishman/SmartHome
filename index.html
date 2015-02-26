@@ -1,31 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head lang="en">
 
+    <!-- Meta -->
 
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <!--Title -->
+    <title>Smart Home</title>
+
+    <!--Style Sheets -->
+    <link href="app/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="app/bower_components/toastr/toastr.css" rel="stylesheet" />
+    <link href="app/css/app.css" rel="stylesheet" />
+
+    <!--Library Scripts -->
+    <script src="app/bower_components/angular/angular.js"></script>
+    <script src="app/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="app/bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="app/bower_components/jquery/dist/jquery.js"></script>
+    <script src="app/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app/bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script src="app/bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="app/bower_components/toastr/toastr.js"></script>
+    <script src="app/bower_components/angular-messages/angular-messages.js"></script>
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Services -->
+    <script src="app/common/services/common.services.js"></script>
+    <script src="app/common/services/deviceFactory.js"></script>
+    <script src="app/common/services/deviceFactoryMock.js"></script>
+    <script src="app/common/services/deviceService.js"></script>
+    <script src="app/common/services/deviceStateChangeService.js"></script>
+
+    <!-- Smart Home Controllers -->
+    <script src="app/components/devices/deviceControllerCtrl.js"></script>
+    <script src="app/components/devices/deviceListCtrl.js"></script>
+    <script src="app/components/devices/deviceDetailCtrl.js"></script>
+    <script src="app/components/devices/deviceEditCtrl.js"></script>
 </head>
+<body ng-app="smartHome">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <a class="navbar-brand"
+                    ui-sref="home">Smart Home</a>
+                <div class="navbar-header">
+                    <button type="button"
+                            class="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="deviceController"><i class="glyphicon glyphicon-off"></i>Control Devices</a></li>
+                        <li><a ui-sref="deviceList"><i class="glyphicon glyphicon-cog"></i>Admin Devices</a></li>
+                        <li><a ui-sref="deviceEdit.info({deviceId:0})"><i class="glyphicon glyphicon-plus"></i>Add Device</a></li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
 
-<body ng-app="myapp">
-
-
-<div ng-controller="HelloController" >
-
-    <h2>Hello {{helloTo.title}} !</h2>
-
-</div>
-
-
-<script>
-angular.module("myapp", [])
-    .controller("HelloController", function($scope) {
-        $scope.helloTo = {};
-        $scope.helloTo.title = "World, AngularJS";
-    } );
-</script>
-
-
-
+    <div class="container">
+        <div ui-view></div>
+    </div>
 </body>
-
 </html>

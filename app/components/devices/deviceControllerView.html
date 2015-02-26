@@ -1,0 +1,42 @@
+<div class="panel panel-primary">
+
+    <div class="panel-heading" style="font-size:large">Device List</div>
+
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Device Id</td>
+                <td>Device Name</td>
+                <td>House Device Code</td>
+                <td>Location</td>
+                <td>State</td>
+                <td>
+                    <a class="btn btn-primary" ng-click="vm.toggleImage()">
+                      {{vm.showImage ? "Hide" : "Show"}} Image
+                    </a>
+                </td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="device in vm.devices">
+                <td>{{device.deviceId}}</td>
+                <td>{{device.deviceName}}</td>
+                <td>{{device.deviceHouseCodeId}}{{device.deviceCodeId}}</td>
+                <td>{{device.deviceLocation}}</td>
+                <td>
+<!--                    <button type="button"
+                            ng-click="vm.toggleDeviceState(device)">
+                        {{device.deviceState}}
+                    </button>-->
+                    <a class="btn btn-primary" ng-click="vm.toggleDeviceState(device)">{{device.deviceState}}</a>
+                </td>
+                <td>
+                    <image ng-if="vm.showImage" ng-src="{{device.deviceImagePath}}"  title="{{device.deviceName}}" />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "name": "angular-seed",
+  "description": "A starter project for AngularJS",
+  "version": "bower install angular-resource",
+  "homepage": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "html5-boilerplate": "~4.3.0"
+  },
+  "authors": [
+    "JimiJS <jim.moran@fireflylegal.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "resource"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}

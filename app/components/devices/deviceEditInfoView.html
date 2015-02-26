@@ -1,0 +1,138 @@
+<form class="form-horizontal" name="deviceForm" novalidate>
+    <fieldset>
+        <legend>Device Information</legend>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="inputDeviceId">Device Code</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputDeviceId"
+                       ui-mask="9"
+                       ng-model="vm.device.deviceId" />
+            </div>
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error':deviceForm.inputDeviceName.$invalid &&
+                                    deviceForm.inputDeviceName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputDeviceName">Device Name
+            </label>
+            <div class="col-md-4">
+                <input id="inputDeviceName"
+                       name="inputDeviceName"
+                       type="text"
+                       placeholder="Device Name (required)"
+                       ng-model="vm.device.deviceName"
+                       required
+                       minlength="4"
+                       maxlength= "12">
+                </input>
+            </div>
+            <span class="help-block has-error">
+                <span ng-messages="deviceForm.inputDeviceName.$error">
+                    <span ng-message="required">Required</span>
+                    <span ng-message="minlength">Min of 4 chars</span>
+                    <span ng-message="maxlength">Max of 12 chars</span>
+                </span>
+            </span>
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error':deviceForm.inputHouseCode.$invalid &&
+                                    deviceForm.inputHouseCode.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputHouseCode">House Code
+            </label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputHouseCode"
+                       name="inputHouseCode"
+                       ui-mask="A (required)"
+                       ng-model="vm.device.deviceHouseCodeId"
+                       required />
+            </div>
+            <span class="help-block has-error" ng-show="deviceForm.inputHouseCode.$invalid"> House code is required.</span>
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error':deviceForm.inputDeviceCode.$invalid &&
+                                    deviceForm.inputDeviceCode.$dirty}">
+            <label class="col-md-2 control-label" for="inputDeviceCode">Device Code</label>
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputDeviceCode"
+                       name="inputDeviceCode"
+                       ui-mask="99 (required)"
+                       ng-model="vm.device.deviceCodeId"
+                       required />
+            </div>
+            <span class="help-block has-error" ng-show="deviceForm.inputDeviceCode.$invalid"> Device code is required.</span>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="inputDeviceLocation">Location</label>
+            <div class="col-md-4">
+                <input id="inputDeviceLocation"
+                       type="text"
+                       placeholder="Location"
+                       ng-model="vm.device.deviceLocation" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="inputDeviceState">Device State</label>
+            <div class="col-md-4">
+                <input id="inputDeviceState"
+                       type="text"
+                       placeholder="State"
+                       ng-model="vm.device.deviceState" />
+            </div>
+        </div>
+
+
+        <!--        <div class="form-group">
+                    <label class="col-md-2 control-label"
+                           for="inputDeviceInstallationDate">Installed On:</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input class="form-control"
+                                   id="inputDeviceInstallationDate"
+                                   type="text"
+                                   datepicker-popup="MMM dd, yyyy "
+                                    is-open="vm.opened"></input>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default"
+                                        ng-click="vm.open($event)">
+                                    <i class="glyphicon glyphicon-calendar" />
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>-->
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputDescription">Description</label>
+            <div class="col-md-10">
+                <textarea id="inputDescription"
+                          placeholder="Description"
+                          rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right: 10px"
+                            ng-click="vm.submit()">
+                        Save
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            style="width:70px"
+                            ng-click="vm.cancel()">
+                        Cancel
+                    </button>
+                </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
