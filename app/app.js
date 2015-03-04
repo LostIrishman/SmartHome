@@ -7,6 +7,7 @@
                               "ui.mask",
                               "ui.bootstrap",
                               "ngMessages",
+                              "satellizer",
                               "deviceFactoryMock"]);
 
     app.config(function ($provide){
