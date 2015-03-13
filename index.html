@@ -8,9 +8,9 @@
     <title>Smart Home</title>
 
     <!--Style Sheets -->
-    <link href="app/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="app/bower_components/toastr/toastr.css" rel="stylesheet" />
-    <link href="app/css/app.css" rel="stylesheet" />
+    <link href="app/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="app/bower_components/toastr/toastr.css" rel="stylesheet"/>
+    <link href="app/css/app.css" rel="stylesheet"/>
 
     <!--Library Scripts -->
     <script src="app/bower_components/angular/angular.js"></script>
@@ -42,33 +42,35 @@
     <script src="app/components/devices/deviceEditCtrl.js"></script>
 </head>
 <body ng-app="smartHome">
-    <nav class="navbar navbar-inverse">
-        <div class="container">
-            <a class="navbar-brand"
-                    ui-sref="home">Smart Home</a>
-                <div class="navbar-header">
-                    <button type="button"
-                            class="navbar-toggle"
-                            data-toggle="collapse"
-                            data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a ui-sref="deviceController"><i class="glyphicon glyphicon-off"></i>Control Devices</a></li>
-                        <li><a ui-sref="deviceList"><i class="glyphicon glyphicon-cog"></i>Admin Devices</a></li>
-                        <li><a ui-sref="deviceEdit.info({deviceId:0})"><i class="glyphicon glyphicon-plus"></i>Add Device</a></li>
-                    </ul>
-                </div>
-        </div>
-    </nav>
-
+<nav class="navbar navbar-inverse">
     <div class="container">
-        <div ui-view></div>
+        <a class="navbar-brand"
+           ui-sref="home">Smart Home</a>
+
+        <div class="navbar-header">
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="deviceController"><i class="glyphicon glyphicon-off"></i>Control Devices</a></li>
+                <li><a ui-sref="deviceList"><i class="glyphicon glyphicon-cog"></i>Admin Devices</a></li>
+                <li><a ui-sref="deviceEdit.info({deviceId:0})"><i class="glyphicon glyphicon-plus"></i>Add Device</a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
+
+<div class="container">
+    <div ui-view></div>
+</div>
 </body>
 </html>

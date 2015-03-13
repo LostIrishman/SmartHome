@@ -7,8 +7,7 @@
                               "ui.mask",
                               "ui.bootstrap",
                               "ngMessages",
-                              "satellizer",
-                              "deviceFactoryMock"]);
+                              "satellizer"]);
 
     app.config(function ($provide){
         $provide.decorator("$exceptionHandler",
