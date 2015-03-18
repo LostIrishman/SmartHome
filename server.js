@@ -35,6 +35,11 @@ app.use(flash());*/
 app.use(express.static(__dirname));
 
 
+//Use Authentication
+var auth = require("./auth");
+auth.init(app);
+
+
 // Manage routes
 app.get ("/", function(req,res){
    res.render("home", {title:"", message:"Hi"});
